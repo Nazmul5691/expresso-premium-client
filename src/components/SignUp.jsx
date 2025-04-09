@@ -26,18 +26,24 @@ export default function SignUp() {
 
             const newUser = {name, email, createdAt}
 
-            fetch('https://expresso-premium-server.vercel.app/users', {
-                method:'POST',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(newUser)
+
+            axios.post('https://expresso-premium-server.vercel.app/users', newUser)
+            .then(response =>{
+                console.log(response.data);
             })
-            .then(res =>res.json())
-            .then(data => {
-                console.log(data);
-                alert('user added into database successfully')
-            })
+
+            // fetch('https://expresso-premium-server.vercel.app/users', {
+            //     method:'POST',
+            //     headers: {
+            //         'content-type': 'application/json'
+            //     },
+            //     body: JSON.stringify(newUser)
+            // })
+            // .then(res =>res.json())
+            // .then(data => {
+            //     console.log(data);
+            //     alert('user added into database successfully')
+            // })
 
 
         })
