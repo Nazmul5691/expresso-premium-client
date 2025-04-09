@@ -21,18 +21,25 @@ export default function SignIn() {
                 const lastSignInTime = result?.user?.metadata?.lastSignInTime
                 const logInInfo = { email, lastSignInTime }
 
-                fetch('http://localhost:5000/users', {
-                    method: "PATCH",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(logInInfo),
+
+                //use axios
+                axios.patch('https://expresso-premium-server.vercel.app/users', loginInfo)
+                .then(response =>{
+                    console.log(response.data);
                 })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data.user);
-                        alert('user updated successfully')
-                    })
+
+                // fetch('https://expresso-premium-server.vercel.app/users', {
+                //     method: "PATCH",
+                //     headers: {
+                //         "Content-Type": "application/json",
+                //     },
+                //     body: JSON.stringify(logInInfo),
+                // })
+                //     .then(res => res.json())
+                //     .then(data => {
+                //         console.log(data.user);
+                //         alert('user updated successfully')
+                //     })
 
 
 

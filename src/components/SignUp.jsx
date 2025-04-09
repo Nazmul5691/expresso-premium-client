@@ -26,7 +26,7 @@ export default function SignUp() {
 
             const newUser = {name, email, createdAt}
 
-            fetch('http://localhost:5000/users', {
+            fetch('https://expresso-premium-server.vercel.app/users', {
                 method:'POST',
                 headers: {
                     'content-type': 'application/json'

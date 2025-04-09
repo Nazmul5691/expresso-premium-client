@@ -23,7 +23,7 @@ export default function Users() {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/users/${_id}`, {
+                fetch(`https://expresso-premium-server.vercel.app/users/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

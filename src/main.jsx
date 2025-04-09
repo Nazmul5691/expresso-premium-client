@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch('http://localhost:5000/coffee')
+        loader: () => fetch('https://expresso-premium-server.vercel.app/coffee')
       },
       {
         path: 'addCoffee',
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
       {
         path: 'updateCoffee/:id',
         element: <UpdateCoffee />,
-        loader: ({ params }) => fetch(`http://localhost:5000/coffee/${params.id}`)
+        loader: ({ params }) => fetch(`https://expresso-premium-server.vercel.app/coffee/${params.id}`)
       },
       {
         path: 'signIn',
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
       {
         path: 'users',
         element: <Users />,
-        loader: () => fetch('http://localhost:5000/users')
+        loader: () => fetch('https://expresso-premium-server.vercel.app/users')
       },
     ]
   }
