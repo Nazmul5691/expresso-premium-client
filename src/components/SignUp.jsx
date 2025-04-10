@@ -27,6 +27,11 @@ export default function SignUp() {
             const newUser = {name, email, createdAt}
 
 
+            // axios.post('https://expresso-premium-server.vercel.app/users', newUser)
+            // .then(response =>{
+            //     console.log(response.data);
+            // })
+
             axios.post('https://expresso-premium-server.vercel.app/users', newUser)
             .then(response =>{
                 console.log(response.data);
